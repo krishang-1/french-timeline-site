@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>French Revolution</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 20px; }
+    h1 { text-align: center; color: #2c3e50; }
+    .filter { text-align: center; margin: 20px 0; }
+    .timeline {
+      position: relative; max-width: 1000px; margin: auto;
+      padding: 40px 0;
+    }
+    .timeline::after {
+      content: ''; position: absolute; width: 2px; background: #0d6efd;
+      top: 0; bottom: 0; left: 50%; margin-left: -1px;
+      z-index: 0;
+    }
+    .container {
+      padding: 15px 60px; position: relative; background: inherit; width: 50%; transition: all 0.3s ease-in-out;
+      z-index: 1;
+    }
+    .left { left: 0; transform: translateX(-20px); }
+    .right { left: 50%; transform: translateX(20px); }
+    .content {
+      padding: 20px; background: white; border-radius: 6px; position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .content:hover { background-color: #ecf6ff; transform: scale(1.02); }
+    .hidden { display: none; }
+    .nav { text-align: center; margin-top: 30px; }
+    .nav a {
+      padding: 10px 20px; background: #0d6efd; color: white;
+      border-radius: 5px; text-decoration: none; margin: 0 10px; transition: background 0.3s ease-in-out;
+    }
+    .nav a:hover {
+      background: #0b5ed7;
+    }
+    @media screen and (max-width: 600px) {
+      .timeline::after { left: 31px; }
+      .container { width: 100%; padding-left: 70px; padding-right: 25px; }
+      .right { left: 0%; }
+    }
+  </style>
+</head>
+<body>
+  <h1>French Revolution</h1>
+  <div class="filter">
+    <button onclick="toggleAll()">Show/Hide All</button>
+  </div>
+  <div class="timeline" id="timeline">
+    <div class="container left">
+      <div class="content">
+        <h2>1789 – Storming of the Bastille</h2>
+        <p>The fall of the Bastille prison marked the start of the French Revolution and symbolized the collapse of royal tyranny.</p>
+      </div>
+    </div>
+    <div class="container right">
+      <div class="content">
+        <h2>1791 – Constitutional Monarchy</h2>
+        <p>The National Assembly adopted the Constitution of 1791, limiting the power of the king and establishing a legislative assembly.</p>
+      </div>
+    </div>
+    <div class="container left">
+      <div class="content">
+        <h2>1792 – France Becomes a Republic</h2>
+        <p>The monarchy was officially abolished and France declared a republic following Louis XVI’s suspension.</p>
+      </div>
+    </div>
+    <div class="container right">
+      <div class="content">
+        <h2>1793–1794 – Reign of Terror</h2>
+        <p>Radicals led by Robespierre initiated mass executions of perceived enemies of the revolution, including King Louis XVI and Queen Marie Antoinette.</p>
+      </div>
+    </div>
+    <div class="container left">
+      <div class="content">
+        <h2>1799 – Napoleon’s Coup d’État</h2>
+        <p>Napoleon Bonaparte overthrew the Directory and established the Consulate, ending the French Revolution and rising to power.</p>
+      </div>
+    </div>
+  </div>
+  <div class="nav">
+    <a href="medieval.html">⬅️ Medieval</a>
+    <a href="earlymodern.html">Early Modern ➡️</a>
+  </div>
+  <script>
+    function toggleAll() {
+      document.querySelectorAll('.content p')
+        .forEach(el => el.classList.toggle('hidden'));
+    }
+  </script>
+</body>
+</html>

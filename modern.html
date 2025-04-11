@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern France</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f8f9fa; margin: 0; padding: 20px; }
+    h1 { text-align: center; color: #2c3e50; }
+    .filter { text-align: center; margin: 20px 0; }
+    .timeline {
+      position: relative; max-width: 1000px; margin: auto;
+      padding: 40px 0;
+    }
+    .timeline::after {
+      content: ''; position: absolute; width: 2px; background: #0d6efd;
+      top: 0; bottom: 0; left: 50%; margin-left: -1px;
+      z-index: 0;
+    }
+    .container {
+      padding: 15px 60px; position: relative; background: inherit; width: 50%; transition: all 0.3s ease-in-out;
+      z-index: 1;
+    }
+    .left { left: 0; transform: translateX(-20px); }
+    .right { left: 50%; transform: translateX(20px); }
+    .content {
+      padding: 20px; background: white; border-radius: 6px; position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .content:hover { background-color: #ecf6ff; transform: scale(1.02); }
+    .hidden { display: none; }
+    .nav { text-align: center; margin-top: 30px; }
+    .nav a {
+      padding: 10px 20px; background: #0d6efd; color: white;
+      border-radius: 5px; text-decoration: none; margin: 0 10px; transition: background 0.3s ease-in-out;
+    }
+    .nav a:hover {
+      background: #0b5ed7;
+    }
+    @media screen and (max-width: 600px) {
+      .timeline::after { left: 31px; }
+      .container { width: 100%; padding-left: 70px; padding-right: 25px; }
+      .right { left: 0%; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Modern France (1940–Today)</h1>
+  <div class="filter">
+    <button onclick="toggleAll()">Show/Hide All</button>
+  </div>
+  <div class="timeline" id="timeline">
+    <!-- Timeline event containers go here -->
+    <div class="container left">
+      <div class="content">
+        <h2>1940–1944 – Nazi Occupation</h2>
+        <p>France was occupied by Nazi Germany during WWII. Resistance movements and the Allied liberation ended the occupation.</p>
+      </div>
+    </div>
+    <div class="container right">
+      <div class="content">
+        <h2>1958 – Fifth Republic Established</h2>
+        <p>Charles de Gaulle founded the Fifth Republic with a stronger presidency and new constitution for modern French governance.</p>
+      </div>
+    </div>
+    <div class="container left">
+      <div class="content">
+        <h2>1962 – Algerian Independence</h2>
+        <p>After a violent decolonization war, France granted independence to Algeria, ending a major chapter of French colonialism.</p>
+      </div>
+    </div>
+    <div class="container right">
+      <div class="content">
+        <h2>1992 – Maastricht Treaty</h2>
+        <p>France ratified the treaty forming the European Union, committing to greater European economic and political integration.</p>
+      </div>
+    </div>
+  </div>
+  <div class="nav">
+    <a href="earlymodern.html">⬅️ Previous</a>
+    <a href="thankyou.html">✅ Finish</a>
+  </div>
+  <script>
+    function toggleAll() {
+      const items = document.querySelectorAll('.content');
+      items.forEach(item => {
+        item.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

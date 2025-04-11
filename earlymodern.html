@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Early Modern France</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 20px; }
+    h1 { text-align: center; color: #2c3e50; }
+    .filter { text-align: center; margin: 20px 0; }
+    .timeline {
+      position: relative; max-width: 1000px; margin: auto;
+      padding: 40px 0;
+    }
+    .timeline::after {
+      content: ''; position: absolute; width: 2px; background: #0d6efd;
+      top: 0; bottom: 0; left: 50%; margin-left: -1px;
+      z-index: 0;
+    }
+    .container {
+      padding: 15px 60px; position: relative; background: inherit; width: 50%; transition: all 0.3s ease-in-out;
+      z-index: 1;
+    }
+    .left { left: 0; transform: translateX(-20px); }
+    .right { left: 50%; transform: translateX(20px); }
+    .content {
+      padding: 20px; background: white; border-radius: 6px; position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .content:hover { background-color: #ecf6ff; transform: scale(1.02); }
+    .hidden { display: none; }
+    .nav { text-align: center; margin-top: 30px; }
+    .nav a {
+      padding: 10px 20px; background: #0d6efd; color: white;
+      border-radius: 5px; text-decoration: none; margin: 0 10px; transition: background 0.3s ease-in-out;
+    }
+    .nav a:hover {
+      background: #0b5ed7;
+    }
+    @media screen and (max-width: 600px) {
+      .timeline::after { left: 31px; }
+      .container { width: 100%; padding-left: 70px; padding-right: 25px; }
+      .right { left: 0%; }
+    }
+  </style>
+</head>
+<body>
+  <h1>19th & Early 20th Century</h1>
+  <div class="filter">
+    <button onclick="toggleAll()">Show/Hide All</button>
+  </div>
+  <div class="timeline" id="timeline">
+    <div class="container left">
+      <div class="content">
+        <h2>1830 – French Colonization of Algeria</h2>
+        <p>France began its colonial campaign in North Africa by invading and occupying Algeria, initiating a long period of control.</p>
+      </div>
+    </div>
+    <div class="container right">
+      <div class="content">
+        <h2>1870–1871 – Franco-Prussian War</h2>
+        <p>France was defeated by Prussia, leading to the fall of Napoleon III and the establishment of the French Third Republic.</p>
+      </div>
+    </div>
+    <div class="container left">
+      <div class="content">
+        <h2>1880–1914 – Colonial Expansion</h2>
+        <p>France expanded its global empire significantly, especially in Africa and Southeast Asia, making it one of the largest colonial powers.</p>
+      </div>
+    </div>
+    <div class="container right">
+      <div class="content">
+        <h2>1914–1918 – World War I</h2>
+        <p>France played a major role in World War I as part of the Allied Powers. The war devastated much of northern France but ended in Allied victory.</p>
+      </div>
+    </div>
+  </div>
+  <div class="nav">
+    <a href="revolution.html">⬅️ Revolution</a>
+    <a href="modern.html">Modern ➡️</a>
+  </div>
+  <script>
+    function toggleAll() {
+      document.querySelectorAll('.content p')
+        .forEach(el => el.classList.toggle('hidden'));
+    }
+  </script>
+</body>
+</html>
